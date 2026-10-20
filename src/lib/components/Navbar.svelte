@@ -3,23 +3,25 @@
   import { Menu, X, ArrowUpRight } from "lucide-svelte";
   import { page } from "$app/state";
   import { goto } from "$app/navigation";
+import { resolve } from "$app/paths";
+
 
   let menuOpen = $state(false);
 
-  const links = [
-    { name: "About", href: "/#about" },
-    { name: "Projects", href: "/#projects" },
-    { name: "Skills", href: "/#skills" },
-    { name: "Experience", href: "/#experience" },
-    { name: "Contact", href: "/#contact" }
-  ];
+const links = [
+  { name: "About", href: resolve("/#about") },
+  { name: "Projects", href: resolve("/#projects") },
+  { name: "Skills", href: resolve("/#skills") },
+  { name: "Experience", href: resolve("/#experience") },
+  { name: "Contact", href: resolve("/#contact") }
+];
 
   async function navigate(href) {
     menuOpen = false;
 
     const hash = href.split("#")[1];
 
-    if (page.url.pathname === "/" && hash) {
+    if (page.url.pathname === resolve("/") && hash) {
       document.getElementById(hash)?.scrollIntoView({
         behavior: "smooth"
       });
@@ -31,10 +33,10 @@
   async function goHome() {
     menuOpen = false;
 
-    if (page.url.pathname === "/") {
+    if (page.url.pathname === resolve("/")) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      await goto("/");
+      await goto(resolve("/"));
     }
   }
 </script>
@@ -55,7 +57,7 @@
   >
     <!-- Logo -->
     <a
-      href="/"
+      href={resolve("/")}
       class="text-xl font-black tracking-[-.09em]"
       onclick={(e) => {
         e.preventDefault();
@@ -83,11 +85,11 @@
 
     <!-- Desktop Contact -->
     <a
-      href="/#contact"
+      href={resolve("/#contact")}
       class="hidden items-center gap-2 rounded-full border border-neutral-800 px-5 py-2.5 text-xs font-bold transition hover:bg-neutral-900 hover:text-white md:flex"
       onclick={(e) => {
         e.preventDefault();
-        navigate("/#contact");
+        navigate(resolve("/#contact"));
       }}
     >
       Let's talk

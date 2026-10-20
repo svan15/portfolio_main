@@ -1,6 +1,8 @@
 <script>
   import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-svelte";
   import { projects } from "$lib/data/projects.js";
+  import { resolve } from '$app/paths';
+
   let track;
   function move(direction) {
     if (!track) return;
@@ -49,11 +51,11 @@
         >
 
 <a
-  href={"/projects/" + project.slug}
+  href={resolve(`/projects/${project.slug}`)}
   class="flex aspect-[16/10] items-center justify-center overflow-hidden bg-[#e8e7e1]"
 >
   <img
-    src={project.image}
+    src={resolve(project.image)}
     alt={"Preview of " + project.name}
     loading="lazy"
     class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
@@ -79,7 +81,7 @@
                 >{/each}
             </div>
             <a
-              href={"/projects/" + project.slug}
+              href={resolve(`/projects/${project.slug}`)}
               class="mt-7 inline-flex items-center gap-2 text-sm font-bold hover:underline"
               >Explore project <ArrowUpRight size={16} /></a
             >
@@ -90,7 +92,7 @@
     <div class="mt-7 flex justify-between items-center gap-4">
       <p class="text-xs text-neutral-500">Swipe to explore selected work</p>
       <a
-        href="/projects"
+        href={resolve('/projects')}
         class="inline-flex items-center gap-2 rounded-full bg-[#1e1e1d] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#42423c]"
         >View all projects <ArrowUpRight size={17} /></a
       >

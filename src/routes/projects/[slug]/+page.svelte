@@ -1,7 +1,7 @@
 
 <script>
   import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-svelte';
-
+import { resolve, base } from "$app/paths";
   let { data } = $props();
   let project = $derived(data.project);
 
@@ -35,7 +35,7 @@
 
 <article class="mx-auto max-w-5xl px-6 py-16 md:px-10 md:py-24">
 
-  <a href="/projects" class="inline-flex items-center gap-2 text-sm font-semibold">
+  <a href={resolve("/projects")} class="inline-flex items-center gap-2 text-sm font-semibold">
     <ArrowLeft size={16} /> All projects
   </a>
 
@@ -63,7 +63,7 @@
     >
       {#key screenshots[activeImage]}
         <img
-          src={screenshots[activeImage]}
+          src={`${base}${screenshots[activeImage]}`}
           alt={`${project.name} screenshot ${activeImage + 1}`}
           class="aspect-[16/10] w-full object-contain animate-gallery"
         />
@@ -117,7 +117,7 @@
             }`}
           >
             <img
-              src={image}
+              src={`${base}${image}`}
               alt=""
               loading="lazy"
               class="aspect-video w-full object-cover"

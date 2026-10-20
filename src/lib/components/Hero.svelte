@@ -1,6 +1,8 @@
 <script>
   import { ArrowUpRight, ArrowRight, ArrowDownRight } from "lucide-svelte";
   import FloatingBackground from "./FloatingBackground.svelte";
+import { resolve } from "$app/paths";
+
 </script>
 
 <section
@@ -29,7 +31,7 @@
     </p>
     <div class="mt-9 flex flex-wrap gap-3">
       <a
-        href="/#projects"
+        href={resolve("/#projects")}
         class="inline-flex items-center gap-3 rounded-full bg-[#1e1e1d] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#42423c]"
         >Explore my work <ArrowUpRight size={17} /></a
       ><a
@@ -52,7 +54,7 @@
       class="relative aspect-[4/4.5] overflow-hidden rounded-[12px] bg-[#dddcd5]"
     >
       <img
-        src="/images/profile/photo.jpg"
+        src={resolve("/images/profile/photo.jpg")}
         alt="My Photo"
         class="h-full w-full object-cover"
       />
