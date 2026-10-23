@@ -26,7 +26,7 @@
     {
       title: "Design & Prototyping",
       items: [
-        "Figma", "Webflow", "WordPress", "Canva"
+        "Figma", "Webflow", "WordPress", "Canva", "Elementor"
       ]
     },
     {
