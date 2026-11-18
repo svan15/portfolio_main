@@ -158,4 +158,47 @@ features: [
   ]
 },
 
+{
+  slug: 'unshaken-tarot-ai',
+  n: '06',
+  type: 'WEB APPLICATION · BUILT',
+  name: 'Unshaken Tarot',
+  desc: 'An AI-powered tarot reading website with instant readings, a card of the day, and a booking form for personal tarot and palmistry sessions.',
+  tags: [
+    'Node.js',
+    'Express',
+    'JavaScript',
+    'HTML',
+    'CSS',
+    'Groq API',
+    'Google Gemini API',
+    'Responsive Design'
+  ],
+
+  image: '/images/projects/unshakentarot/hero.png',
+
+  images: [
+    '/images/projects/unshakentarot/hero.png',
+    '/images/projects/unshakentarot/drawyourcards.png',
+    '/images/projects/unshakentarot/cardfortoday.png',
+    '/images/projects/unshakentarot/booking.png',
+    '/images/projects/unshakentarot/faqs.png',
+    '/images/projects/unshakentarot/footer.png'
+  ],
+
+  summary: 'Unshaken Tarot is a branded website for a tarot and palmistry reader. Visitors can draw cards from a full 78-card deck and receive an AI-written reading on love, career, daily reflection, or a yes or no question. They can also turn over a card of the day or request a personal reading. A Node.js and Express server keeps the API keys private, writes readings through the Groq API, and switches to the Google Gemini API if Groq is busy. Instant readings are AI-generated for reflection and entertainment, while personal readings are arranged with the reader.',
+
+  features: [
+    'Instant AI readings for love, career, daily reflection, yes or no, and general questions',
+    'Shuffle, deal, and flip animations with reversed cards and Rider-Waite-Smith artwork',
+    'Card of the day that stays the same until tomorrow',
+    'Card meanings page with search and suit filters',
+    'Personal reading request form with a calendar and time picker, reading channel, and payment method options',
+    'Safety check that declines harmful or crisis-related questions and points to a help page',
+    'Automatic fallback between AI providers, with the last reading saved so it is not lost',
+    'Optional coffee support flow with a QR code page',
+    'FAQ, About, help, and privacy pages in a responsive layout'
+  ]
+},
+
 ];
